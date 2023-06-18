@@ -1,27 +1,49 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap');
+
+
+/* *, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+    --foreground-rgb: 0, 0, 0;
+    --background-start-rgb: 255, 255, 255;
+    --background-end-rgb: 220, 220, 220;
+    --link-color: rgba(47,109,211,1);
+    --breakPoint490px: 16px;
+    --fontSize: 16px;
+    --paddingVertical-breakPoint1400px: 24px;
+    --paddingHorizontal-breakPoint1400px: 48px;
+    --paddingVertical-breakPoint1080px:24px;
+    --paddingHorizontal-breakPoint1080px: 48px;
+    --paddingVertical-breakPoint830px: 24px;
+    --paddingHorizontal-breakPoint830px: 24px;
+    --paddingVertical-breakPoint490px: 24px;
+    --paddingHorizontal-breakPoint490px: 20px;
+    --p-fontSize-breakPoint490px: 16px;
+    --h2-fontSize-view-maxWidth-490px: 28px;
+    --h2-margin-top: 0;
+    --h2-margin-bottom: 45px;
+    --p-fontSize-view-maxWidth-490px: 16px;
+    --p-margin-top: 24px;
+    --p-margin-bottom: 0;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+    :root {
+      --foreground-rgb: 255, 255, 255;
+      --background-start-rgb: 0, 0, 0;
+      --background-end-rgb: 0, 0, 0;
+    }
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    color: rgb(var(--foreground-rgb));
+    background:whitesmoke;
+    font-family: 'Merriweather Sans', sans-serif;
 }
