@@ -4,41 +4,36 @@ import Image from 'next/image'
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { ApolloClient, useQuery } from "@apollo/client";
+import { Categories, Category } from "@/models/categories/types";
 // import { GET_LOCATIONS } from "@/graphql/query/locations";
 // import { client } from "@/graphql/graphql";
 
-const categoryes = [ 
-    {name: "lettering", pic: ""},
-    {name: "folhas e cacto", pic: ""},
-    {name: "black & white", pic: ""},
-    {name: "dinossauros", pic: ""},
-    {name: "dourados", pic: ""},
-    {name: "dinossauros", pic: ""},
-    {name: "dourados", pic: ""},
+const categories = [ 
+    {name: "lettering", pic: "", alt: "", lang:"pt-BR"},
+    {name: "folhas e cacto", alt: "", pic: "", lang:"pt-BR"},
+    {name: "black & white", alt: "", pic: "", lang:"pt-BR"},
+    {name: "dinossauros", alt: "", pic: "", lang:"pt-BR"},
+    {name: "dourados", alt: "", pic: "", lang:"pt-BR"},
+    {name: "dinossauros", alt: "", pic: "", lang:"pt-BR"},
+    {name: "dourados", alt: "", pic: "", lang:"pt-BR"},
 ];
-
-export const ComponentData: ComponentProtocol = {
-    langConfig: "pt-BR",
-    componentData: {
-        categoryes: categoryes,
-        minBreakpoint: false
-    }
-};
-
-type categoryes = Category[];
-
-type Category = {
-    name: string
-    pic: string
-};
 
 interface ComponentProtocol {
     langConfig?: string;
     componentData?: {
-        categoryes: categoryes
+        categories: Categories
         minBreakpoint: boolean
     };
 };
+
+export const ComponentData: ComponentProtocol = {
+    langConfig: "pt-BR",
+    componentData: {
+        categories: categories,
+        minBreakpoint: false
+    }
+};
+
 
 let count:Array<number> = [0,2,0,0,0,0,0,2,2,2];
 
@@ -49,6 +44,10 @@ async function MainComponent(props:ComponentProtocol) {
     // const { loading, error, data } = useQuery(GET_LOCATIONS);
 
     const { componentData, langConfig } = props;
+
+    // const { categories } = componentData;
+
+    // categories[langConfig]
 
     const translates = [
        { lang: "en", title: "DecoQuadros", pageName: "Home" },
@@ -356,17 +355,20 @@ async function MainComponent(props:ComponentProtocol) {
 
                         {
 
-                            categoryes.map(i => {
+                            categories.map(i => {
 
                                 return (
 
                                     <li>
 
                                         <picture>
-
-
-                                            <img src={"https://cdn4.oqueeoquee.com/wp-content/uploads/2012/05/imagem-em-movimento-1.jpg"}/>
-
+                                            <source type="image/webp" src="giphy.webp" />
+                                            <source type="image/webp" src="giphy.webp" />
+                                            {/* <source media="(min-width: 800px)" srcSet="large.jpg 1x, larger.jpg 2x"/> */}
+                                            <img 
+                                                sizes="(max-width: 600px) 480px, 800px" 
+                                                loading="lazy" 
+                                                src={"https://cdn4.oqueeoquee.com/wp-content/uploads/2012/05/imagem-em-movimento-1.jpg"}/>
                                         </picture>
 
                                         <span about="Name of category">{"black & white"}</span>

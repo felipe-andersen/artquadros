@@ -20,7 +20,8 @@ function HeadComponent() {
             <link rel="preconnect" href="https://fonts.gstatic.com" />
             <link href="https://fonts.googleapis.com/css2?family=Proza+Libre:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet"></link>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/dragscroll/0.0.8/dragscroll.min.js"></script>
-
+            <meta http-equiv="Content-Type" content="...; charset=..."/>
+            <meta charSet="utf-8" />
         </Head>
 
     )

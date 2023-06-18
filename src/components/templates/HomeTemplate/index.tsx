@@ -1,5 +1,4 @@
 import Image from 'next/image'
-
 import HeaderComponent from './HeaderComponent'
 import MainComponent from './MainComponent'
 import { url } from 'inspector'
@@ -12,7 +11,12 @@ import HeadComponent from './HeadComponent';
 import { ApolloProvider, useQuery } from '@apollo/client'
 import { client } from '@/graphql/graphql'
 import { lang } from '@/utils/langConfig'
+import { Metadata } from 'next'
+ 
 
+export const metadata: Metadata = {
+    title: 'Artquadros',
+};
 
 function delayForDemo(promise:any) {
     return new Promise(resolve => {
@@ -37,7 +41,7 @@ export default async function HomeTemplate() {
 
             <HeadComponent/>
 
-            <HeaderComponent/>
+            <HeaderComponent lang='pt-BR'/>
 
             <Suspense fallback={<div>Loading</div>}>
 
@@ -45,7 +49,7 @@ export default async function HomeTemplate() {
                 
             </Suspense>
 
-            <FooterComponent/>
+            <FooterComponent lang='pt-BR'/>
      
         </Div>
 

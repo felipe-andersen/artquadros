@@ -1,6 +1,6 @@
 const Redis = require("ioredis");
 
-const username = "useID";
+const username = "userID";
 const password = "123456"
 
 new Redis(); 
