@@ -2,6 +2,7 @@ import SchemaComponent from "@/types/SchemaComponent";
 import { Div, Title } from "./styles"
 
 
+
 export async function FooterComponent(props:SchemaComponent) {
     const {} = props;
 

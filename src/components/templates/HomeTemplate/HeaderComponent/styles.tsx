@@ -2,12 +2,7 @@
 import styled from "styled-components"
 
 const Div = styled.div`
-    @import url('https://fonts.googleapis.com/css2?family=Signika:wght@300;400;500;600;700&display=swap');
-    <style>
-    @import url('https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap');
-
     width: 100%;
-    height: 114px;
     box-sizing: border-box;
     display: flex;
     border-bottom: none; //1px solid whitesmoke;
@@ -16,18 +11,26 @@ const Div = styled.div`
     color: black;
     margin: 0 0 12px 0;
     padding: 8px 24px 8px 24px;
-   
+    align-items: center;
     flex-direction: column;
 
     div:nth-child(1) {
         box-sizing: border-box;
         display: flex;
         height: 46px;
-        justify-content: space-around;
+        justify-content: space-between;
         align-items: center;
-        background: orange;
+        background: transparent;
         width: 100%;
-        position: relative;
+
+        div:nth-child(1) {
+            box-sizing: border-box;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: orange;
+            width: min-content;
+        }
        
         .size {
             display: none;
@@ -44,52 +47,80 @@ const Div = styled.div`
         }
 
         form {
-            width: 100%;
+            width: 40%;
             box-sizing: border-box;
-            height: 46px;
+            height: 40px;
             display: flex;
             align-items: center;
             border-radius: 5px;
             border: 1px solid rgba(235, 235, 235, 1);
             background: rgba(246,246,246,0.5);
-    
-            justify-content: space-around;
-            position: absolute;
-            margin: 100px 0 0 0;
-    
-    
+            margin: 0px;
+            justify-content: space-between;
+
+            .placeholder {
+                display: flex;
+                align-items: center;
+                display: none;
+                background: transparent;
+                padding: 0 0 0 12px;
+            }
+           
             i {
-                background: blue;
+                background: rgba(245,245,245);
                 border-radius: 5px;
-                height: 46px;
-                width: 46px;
+                height: 34px;
+                width: 34px;
+                margin: 2px;
                 overflow: hidden;
     
                 svg {
-                        transform: scale(70%);
-                        fill: grey;
+                    transform: scale(50%);
+                    fill: grey;
                 }
             }
     
             input {
                 height: 100%;
-                background: red; 
+                background: transparent;
                 outline: transparent;
                 width: 85%;
+                margin: 0 0 0 12px;
             }
         }
 
         .container-cart {
-            gap: 12px;
+            gap: 0px;
             box-sizing: border-box;
             display: flex;
             align-items: center;
             white-space: nowrap;
             background: transparent;
+            gap: 6px;
+            align-items:center;
 
             button {
-                svg {
-                    transform: scale(46%);
+                box-sizing: border-box;
+                display: flex;
+                justify-content: center;
+                align-items:center;
+                background:  transparent;
+                width: 40px;
+                height: 40px; 
+                padding: 6px;
+                border-radius: 5px;
+                overflow: hidden;
+
+                :hover {
+                    background:  rgba(250,250,250,1);
+                }
+
+                i {
+
+                    svg {
+                    transform: scale(58%);
+                    fill: grey;
+                    }
                 }
             }
         }
@@ -111,14 +142,13 @@ const Div = styled.div`
         width: 100%;
         box-sizing: border-box;
         height: 46px;
-        display: none;
+        display: flex;
         align-items: center;
         border-radius: 5px;
         border: 1px solid rgba(235, 235, 235, 1);
         background: rgba(246,246,246,0.5);
         margin: 8px 0 0 0;
         justify-content: space-around;
-
 
         i {
             background: blue;

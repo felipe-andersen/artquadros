@@ -12,6 +12,8 @@ import { ApolloProvider, useQuery } from '@apollo/client'
 import { client } from '@/graphql/graphql'
 import { lang } from '@/utils/langConfig'
 import { Metadata } from 'next'
+import CookiesComponent from '@/components/organisms/CookiesAlertComponent'
+import ChatButtonOrganism from '@/components/organisms/ChatButtonOrganism'
  
 
 export const metadata: Metadata = {
@@ -50,6 +52,10 @@ export default async function HomeTemplate() {
             </Suspense>
 
             <FooterComponent lang='pt-BR'/>
+
+            <CookiesComponent/>
+
+            <ChatButtonOrganism/>
      
         </Div>
 

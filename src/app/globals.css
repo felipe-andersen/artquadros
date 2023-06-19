@@ -46,4 +46,45 @@ body {
     color: rgb(var(--foreground-rgb));
     background:whitesmoke;
     font-family: 'Merriweather Sans', sans-serif;
+    position: relative;
 }
+
+section, .section {
+    width: 100vw;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 12px 0 12px 0;
+}
+
+h1 {
+    font-size: 32px;
+    margin: 35px 0 24px 0;
+    font-weight: 800;
+    color: rgba(8,8,8,0.8);
+    text-align: center;
+}
+
+h2, .h2 {
+    font-family: 'Sen', sans-serif;
+    font-family: 'Proza Libre', sans-serif;
+    font-size: calc(2 * var(--fontSize));                                
+    font-weight: 600;
+    margin:  0 0 24px 0;                            
+    color: rgba(45,45,45,1);
+    width:  100%;
+    white-space: nowrap;
+    letter-spacing: -1px;
+}
+
+p, .p {
+    font-weight: 300;
+    line-height: 25px;
+}
+
+a {
+    text-decoration: none;
+}
+
+

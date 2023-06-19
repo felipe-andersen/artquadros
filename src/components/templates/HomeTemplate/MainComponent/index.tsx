@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { ApolloClient, useQuery } from "@apollo/client";
 import { Categories, Category } from "@/models/categories/types";
+
 // import { GET_LOCATIONS } from "@/graphql/query/locations";
 // import { client } from "@/graphql/graphql";
 
@@ -86,17 +87,19 @@ async function MainComponent(props:ComponentProtocol) {
 
                     <span>
 
-                        <a href="">{content.title}</a>
+                        <a href="a">{content.title}</a>
 
                         <span>&nbsp; &#8250; &nbsp;</span>
 
-                        <a href="">{content.pageName}</a>
+                        <a href="a">{content.pageName}</a>
 
                     </span>
 
                 </span>
 
                 <div>
+
+                    <h1>Lorem ipsum dolor sit amet consectetur </h1>
 
                     <div>
                      
@@ -480,9 +483,23 @@ async function MainComponent(props:ComponentProtocol) {
 
                 </section>
 
+                <section>
+                    <div>
+
+                    </div>
+                    <div>
+
+                    </div>
+                    <div>
+
+</div>
+<div>
+
+</div>
+                </section>
+
             </Div>
 
- 
             
         </main>
     )

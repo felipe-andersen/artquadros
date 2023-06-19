@@ -1,7 +1,7 @@
 import { JsxElement } from "typescript";
 
 type SchemaComponent = {
-    lang: string;
+    lang?: string;
     content?: Object;
     setContent?: Object;
     component?: () => JsxElement

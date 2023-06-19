@@ -19,11 +19,12 @@ const Div = styled.div`
 
         span:nth-child(1) {
             font-size: calc(0.9 * 16px);
-            color: rgba(153, 153, 153,1) ;
+            color: rgba(153, 153, 153,1);
 
-            a {
+            a{
+                
                 :hover {
-                    color:  rgba(47,109,211,1);
+                    color:rgba(47,109,211,1);
                 }
             }
         }
@@ -39,7 +40,11 @@ const Div = styled.div`
     }
 
     h1 {
-        
+        font-size: 32px;
+        margin: 35px 0 24px 0;
+        font-weight: 800;
+        color: rgba(8,8,8,0.8);
+        text-align: center;
     }
 
     h2, .h2 {
@@ -81,6 +86,14 @@ const Div = styled.div`
         justify-content: center;
         overflow: hidden;
         margin: 12px 0 12px 0;
+
+        h1 {
+            margin: 35px 0 24px 0;
+            font-weight: 800;
+            color: rgba(8,8,8,0.8);
+            text-align: center;
+        }
+    
 
         div:nth-child(1) {
             box-sizing: border-box;
@@ -137,13 +150,7 @@ const Div = styled.div`
                 }
             }
 
-            h1 {
-                font-size: clamp(2.625rem, 1.2857rem + 3.5714vw, 4rem);
-                line-height: 1.1;
-                margin: 35px 0 24px 0;
-                font-weight: 800;
-                letter-spacing: -.2rem;
-                color: rgba(8,8,8,0.8);
+           
             }
 
             h2 {
@@ -164,7 +171,8 @@ const Div = styled.div`
                 font-size: 13px;
                 margin: 50px 0 24px 0;
             }
-        }
+
+
     }
 
     .options {
@@ -706,6 +714,27 @@ const Div = styled.div`
             }
         }
 
+    }
+
+    section:nth-child(11) {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        gap: 12px;
+
+        div {
+            width: 240px;
+            background: blue;
+            box-sizing: border-box;
+
+ 
+    
+  
+            overflow: hidden;
+            padding: 8px;
+            height:120px; 
+            border-radius: 5px;
+        }
     }
 
     @media screen and (max-width: 400) and (orientation: landscape) {
