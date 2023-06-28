@@ -12,23 +12,23 @@ const Div = styled.div`
     font-size: 16px;
     font-weight: 400;
 
+    span:nth-child(1) {
+        width:  100%;
+        text-align: center;
+        margin: 12px 0 12px 0;
 
         span:nth-child(1) {
             font-size: calc(0.9 * 16px);
             color: rgba(153, 153, 153,1);
-            width:  100%;
-            text-align: center;
-    
 
-
-            a {
+            a{
                 
                 :hover {
                     color:rgba(47,109,211,1);
                 }
             }
         }
- 
+    }
 
     section, .section {
         width: 100vw;
@@ -52,6 +52,7 @@ const Div = styled.div`
         font-family: 'Proza Libre', sans-serif;
         font-size: calc(2 * var(--fontSize));                                  /*dinamic value*/
         font-weight: 600;
+        text-weidth: 700;
         margin:  0 0 24px 0;                              /*dinamic value*/
         color: rgba(45,45,45,1);
         width:  100%;
@@ -66,7 +67,7 @@ const Div = styled.div`
     }
 
     a {
-        /* text-decoration: none; */
+        text-decoration: none;
     }
 
     ul {
@@ -77,22 +78,6 @@ const Div = styled.div`
 
     }
 
-    .one {
-        box-sizing: border-box;
-        height: min-content;
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        h1 {
-            margin: 0;
-            font-weight: 800;
-            color: rgba(8,8,8,0.8);
-            text-align: center;
-        }
-    }
-
     div:nth-child(1) {
         box-sizing: border-box;
         width: 100%;
@@ -101,7 +86,6 @@ const Div = styled.div`
         justify-content: center;
         overflow: hidden;
         margin: 12px 0 12px 0;
-        background-color: red;
 
         h1 {
             margin: 35px 0 24px 0;

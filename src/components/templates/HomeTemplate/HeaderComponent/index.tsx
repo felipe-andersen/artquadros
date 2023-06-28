@@ -1,6 +1,12 @@
 'use client'
-import SchemaComponent from "@/types/SchemaComponent";
+import { SchemaComponent } from "@/types";
 import Div from "./styles";
+import { GoX } from "react-icons/go";
+import { TbShoppingBag } from "react-icons/tb";
+
+
+"0isbEW5a5D1Qwndv"
+
 
 
 function HeaderComponent(props: SchemaComponent) {
@@ -46,13 +52,9 @@ function HeaderComponent(props: SchemaComponent) {
                     
                     <div>
 
-                        <i style={{display: "none"}}>
-
-                            <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960"  width="48"><path d="M120     816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"/></svg>
-                            
+                        <i>
+                            <img src="https://w7.pngwing.com/pngs/482/653/png-transparent-vaio-hd-logo.png"/>
                         </i>
-
-                        <i>S</i>
                         
                     </div>
 
@@ -61,19 +63,30 @@ function HeaderComponent(props: SchemaComponent) {
                         
                         <></> : 
 
-                        <form>
+                        <div>
 
-                            <input aria-label={translatedContent.header.form.seachInput.placeholder} placeholder={translatedContent.header.form.seachInput.placeholder} aria-placeholder="" type="text"/>
+                            <form>
 
-                            <i>
-                                <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48"><path d="M796 935 533 672q-30 26-69.959 40.5T378 727q-108.162 0-183.081-75Q120 577 120 471t75-181q75-75 181.5-75t181 75Q632 365 632 471.15 632 514 618 554q-14 40-42 75l264 262-44 44ZM377 667q81.25 0 138.125-57.5T572 471q0-81-56.875-138.5T377 275q-82.083 0-139.542 57.5Q180 390 180 471t57.458 138.5Q294.917 667 377 667Z"/></svg>
-                            </i>
+                                <i className="searchIcon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48"><path d="M796 935 533 672q-30 26-69.959 40.5T378 727q-108.162 0-183.081-75Q120 577 120 471t75-181q75-75 181.5-75t181 75Q632 365 632 471.15 632 514 618 554q-14 40-42 75l264 262-44 44ZM377 667q81.25 0 138.125-57.5T572 471q0-81-56.875-138.5T377 275q-82.083 0-139.542 57.5Q180 390 180 471t57.458 138.5Q294.917 667 377 667Z"/></svg>
+                                </i>
 
-                        </form> 
+                                <input spellCheck="false" aria-label={translatedContent.header.form.seachInput.placeholder} placeholder={translatedContent.header.form.seachInput.placeholder} aria-placeholder="" type="text"/>
+
+                                <span>
+                                    <i className="closeIcon">
+                                        <GoX/>
+                                    </i>
+                                </span>
+
+                            </form>
+
+                            <button>cancel</button>
+
+                        </div>
 
                     }
-
-
+                    
                     <button className="size">TABELA DE MEDIDAS</button>
                     
                     <div className="container-cart">
@@ -95,10 +108,10 @@ function HeaderComponent(props: SchemaComponent) {
 
                         </button>
 
-                         <button>
+                         <button className="button">
 
                             <i>
-                                <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48"><path d="M180 976q-24 0-42-18t-18-42V386q0-24 18-42t42-18h110q0-79 53-134.5T475 136q79 0 137 55.575T670 326h110q24 0 42 18t18 42v530q0 24-18 42t-42 18H180Zm0-60h600V386H180v530Zm300-290q79 0 137-58t58-137h-60q0 55-40 95t-95 40q-55 0-95-40t-40-95h-60q0 79 58 137t137 58ZM350 326h260q0-55-37.5-92.5T480 196q-55 0-92.5 37.5T350 326ZM180 916V386v530Z"/></svg>
+                               <TbShoppingBag/>
                             </i>
                    
                         </button>

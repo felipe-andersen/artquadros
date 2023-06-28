@@ -1,4 +1,4 @@
-import SchemaComponent from "@/types/SchemaComponent";
+import { SchemaComponent } from "@/types";
 import { Div, Title } from "./styles"
 
 

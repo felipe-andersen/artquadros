@@ -1,5 +1,5 @@
 'use client'
-import SchemaComponent from "@/types/SchemaComponent";
+import { SchemaComponent } from "@/types";
 import { Div } from "./styles";
 
 

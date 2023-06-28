@@ -28,8 +28,140 @@ const Div = styled.div`
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: orange;
+        
             width: min-content;
+
+            i {
+                box-sizing: border-box;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 150px;
+                height: 46px;
+                overflow: hidden;
+                transform: scale(70%);
+            }
+        }
+
+        div:nth-child(2) {
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+
+            form {
+                width: 300px;
+                box-sizing: border-box;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                border-radius: 5px;
+                border: 1px solid rgba(235, 235, 235, 1);
+                background: rgba(245, 245, 245);
+                margin: 0px;
+                justify-content: space-between;
+    
+                .placeholder {
+                    display: flex;
+                    align-items: center;
+                    display: none;
+                    background: transparent;
+                    padding: 0 0 0 12px;
+                    color: rgb(1, 1, 1);
+                }
+            
+                i {
+                    background: rgba(245,245,245);
+                    border-radius: 5px;
+                    height: 34px;
+                    width: 34px;
+                    margin: 2px;
+                    overflow: hidden;
+        
+                    svg {
+                        transform: scale(40%);
+                        fill: grey;
+                        margin: -7px 0 0 -7px;
+                        stroke-width: 2px;
+                    }
+                }
+
+                span {
+                    height: 40px;
+                    width: 40px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    .closeIcon {
+                    max-height: 16px;
+                    max-width: 16px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 1000000px;
+                    background: rgba(55,55,55);
+                    padding:0;
+                    
+    
+
+                    svg {
+                 
+                        transform: scale(70%);
+                        fill: rgba(235,235,235);;
+                        margin: 0;
+                        stroke-width: 0px;
+                        
+                    }
+                }
+
+                }
+
+                .closeIcon {
+                    max-height: 18px;
+                    max-width: 18px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 1000000px;
+                    background: rgba(55,55,55);
+                    padding:0;
+                    
+    
+
+                    svg {
+                 
+                        transform: scale(70%);
+                        fill: rgba(235,235,235);;
+                        margin: 0;
+                        stroke-width: 0px;
+                        
+                    }
+                }
+
+                input {
+                    height: 100%;
+                    background: transparent;
+                    outline: transparent;
+                    width: 85%;
+                    margin: 0 0 0 12px;
+                    font-size: 15px;
+                
+
+                    &::placeholder {
+                        color: rgb(120, 120, 120);
+                        font-family: 'Poppins', sans-serif;
+                        letter-spacing: 0.5px;
+                    }
+                    
+                }
+            }
+
+            button {
+                display: flex;
+                font-size: 14px;
+            }
         }
        
         .size {
@@ -54,19 +186,20 @@ const Div = styled.div`
             align-items: center;
             border-radius: 5px;
             border: 1px solid rgba(235, 235, 235, 1);
-            background: rgba(246,246,246,0.5);
+            background: rgba(245, 245, 245);
             margin: 0px;
             justify-content: space-between;
-
+  
             .placeholder {
                 display: flex;
                 align-items: center;
                 display: none;
                 background: transparent;
                 padding: 0 0 0 12px;
+                color: rgb(1, 1, 1);
             }
            
-            i {
+            i, .searchIcon {
                 background: rgba(245,245,245);
                 border-radius: 5px;
                 height: 34px;
@@ -74,18 +207,31 @@ const Div = styled.div`
                 margin: 2px;
                 overflow: hidden;
     
-                svg {
-                    transform: scale(50%);
+                svg,  {
+                    transform: scale(100%);
                     fill: grey;
+                    margin: -7px 0 0 -7px;
+                    stroke-width: 2px;
                 }
             }
+            
+
     
             input {
                 height: 100%;
                 background: transparent;
                 outline: transparent;
-                width: 85%;
+                width: 72%;
                 margin: 0 0 0 12px;
+                font-size: 15px;
+              
+
+                &::placeholder {
+                    color: rgb(120, 120, 120);
+                    font-family: 'Poppins', sans-serif;
+                    letter-spacing: 0.5px;
+                }
+                
             }
         }
 
@@ -110,6 +256,7 @@ const Div = styled.div`
                 padding: 6px;
                 border-radius: 5px;
                 overflow: hidden;
+                margin: 0 -12px 0 0;
 
                 :hover {
                     background:  rgba(250,250,250,1);
@@ -118,8 +265,41 @@ const Div = styled.div`
                 i {
 
                     svg {
-                    transform: scale(58%);
-                    fill: grey;
+                        transform: scale(58%);
+                        fill: rgba(45, 47, 55);
+                 
+                    }
+
+                }
+
+            }
+
+            button:nth-child(3) {
+                box-sizing: border-box;
+                display: flex;
+                justify-content: center;
+                align-items:center;
+                background:  transparent;
+                width: 45px;
+                height: 40px; 
+                padding: 6px;
+                border-radius: 5px;
+                overflow: hidden;
+
+                :hover {
+                    background:  rgba(250,250,250,1);
+                }
+
+                i{
+                    svg {
+                        transform: scale(75%);
+                        fill: none;
+                        stroke-width: 1.3px;
+                        width: 40px;
+                        border-radius: 5px;
+                         height: 40px; 
+                         stroke: rgba(45, 47, 55);
+                   
                     }
                 }
             }
@@ -137,6 +317,8 @@ const Div = styled.div`
         
         }
     }
+
+    
 
     form {
         width: 100%;

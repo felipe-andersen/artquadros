@@ -1,10 +1,19 @@
-import SchemaComponent from "@/types/SchemaComponent";
+import { ProductsRoot, SchemaComponent } from "@/types";
 import Div from "./styles"
 import Image from 'next/image'
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { ApolloClient, useQuery } from "@apollo/client";
 import { Categories, Category } from "@/models/categories/types";
+import { fetchWrapper } from "@/utils/fetchAPI/fetchAPI";
+import { assert } from "console";
+
+
+
+
+
+
+
 
 // import { GET_LOCATIONS } from "@/graphql/query/locations";
 // import { client } from "@/graphql/graphql";
@@ -24,16 +33,29 @@ interface ComponentProtocol {
     componentData?: {
         categories: Categories
         minBreakpoint: boolean
-    };
+        products: any
+        urls: {
+            productsURL: string}
+        };
 };
+
+
+
 
 export const ComponentData: ComponentProtocol = {
     langConfig: "pt-BR",
     componentData: {
         categories: categories,
-        minBreakpoint: false
+        minBreakpoint: false,
+        urls: {
+            productsURL: "https://dummyjson.com/products"
+        },
+        products: undefined
+
     }
 };
+
+
 
 
 let count:Array<number> = [0,2,0,0,0,0,0,2,2,2];
@@ -42,13 +64,7 @@ async function MainComponent(props:ComponentProtocol) {
 
     let count:Array<number> = [0,2,0,0,0,0,0,2,2,2];
 
-    // const { loading, error, data } = useQuery(GET_LOCATIONS);
-
     const { componentData, langConfig } = props;
-
-    // const { categories } = componentData;
-
-    // categories[langConfig]
 
     const translates = [
        { lang: "en", title: "DecoQuadros", pageName: "Home" },
@@ -59,13 +75,19 @@ async function MainComponent(props:ComponentProtocol) {
 
     const content = translates[translate];
 
-    // useEffect(() => {
+
+    let url = 'https://dummyjson.com/products'
+
+    const products = await fetchWrapper<ProductsRoot>(url, {method: "GET"}) 
     
-    // }, []);
+
+    // const data = Object.keys(result)[0];
+
+
 
     return (
         <main>
-   
+ 
             <Div>
 
                 {
@@ -83,7 +105,7 @@ async function MainComponent(props:ComponentProtocol) {
                     //   ))
                 }
 
-                <span>
+   
 
                     <span>
 
@@ -95,30 +117,11 @@ async function MainComponent(props:ComponentProtocol) {
 
                     </span>
 
-                </span>
+        
 
-                <div>
+                <div className=" one">
 
                     <h1>Lorem ipsum dolor sit amet consectetur </h1>
-
-                    <div>
-                     
-                        <div>
-
-                            <span className="previus"></span>
-
-                            <span className="item"></span>
-
-                            <span className="item"></span>
-
-                            <span className="next"></span>
-
-                        </div>
-
-                    </div>
-
-                    <div>
-                    </div>
 
                 </div>
                 {/*
@@ -157,7 +160,7 @@ async function MainComponent(props:ComponentProtocol) {
                             <h2 className="h2">Novidades. <span>&nbsp; Veja nossos lançamentos</span></h2>
                         </span>
                         
-                        <a href="wwww.google.com">Ver mais</a>
+                        <Link href="/category">Ver mais</Link>
 
                     </span>
 
@@ -178,23 +181,29 @@ async function MainComponent(props:ComponentProtocol) {
 
                         {
                             
-                            count.map( i =>                
+                            products.products.map( i =>                
                             
-                                <div className="item" about="item">
+                                <div className="item" about="item" key={i.id}>
 
                                     <a>
 
                                         <div about="galery">
 
-                                            <img src="https://quadrosdecorativos.com/wp-content/uploads/2020/07/9641-Mindset-CAPA-VERTICAL-300x300.jpg"/>
+                                            <img src={i.thumbnail}/>
 
                                         </div>
 
                                     </a>
 
-                                    <p>Quadro floral trigo do campo</p>
+                                    <div >
 
-                                    <p>A partir de R$ 49,90</p>
+                                        <span>{i.title}</span>
+
+                                        <span>{i.description}</span>
+
+                                        <span>A partir de <span title="BRL">{'R$'}</span>{ '58,00'}</span>
+
+                                    </div>
 
                                 </div>
 
@@ -481,9 +490,9 @@ async function MainComponent(props:ComponentProtocol) {
 
                     </div>
 
-                </section>
+                    </section>
 
-                <section>
+                    <section>
                     <div>
 
                     </div>
@@ -492,10 +501,15 @@ async function MainComponent(props:ComponentProtocol) {
                     </div>
                     <div>
 
-</div>
-<div>
+                    </div>
+                    <div>
 
-</div>
+                    </div>
+
+                    <pre>
+                      
+
+                    </pre>
                 </section>
 
             </Div>

@@ -47,6 +47,11 @@ body {
     background:whitesmoke;
     font-family: 'Merriweather Sans', sans-serif;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
 }
 
 section, .section {
