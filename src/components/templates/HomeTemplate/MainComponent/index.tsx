@@ -9,12 +9,6 @@ import { fetchWrapper } from "@/utils/fetchAPI/fetchAPI";
 import { assert } from "console";
 
 
-
-
-
-
-
-
 // import { GET_LOCATIONS } from "@/graphql/query/locations";
 // import { client } from "@/graphql/graphql";
 
@@ -27,7 +21,6 @@ const categories = [
     {name: "dinossauros", alt: "", pic: "", lang:"pt-BR"},
     {name: "dourados", alt: "", pic: "", lang:"pt-BR"},
 ];
-
 interface ComponentProtocol {
     langConfig?: string;
     componentData?: {
@@ -38,9 +31,6 @@ interface ComponentProtocol {
             productsURL: string}
         };
 };
-
-
-
 
 export const ComponentData: ComponentProtocol = {
     langConfig: "pt-BR",
@@ -54,9 +44,6 @@ export const ComponentData: ComponentProtocol = {
 
     }
 };
-
-
-
 
 let count:Array<number> = [0,2,0,0,0,0,0,2,2,2];
 
@@ -75,17 +62,14 @@ async function MainComponent(props:ComponentProtocol) {
 
     const content = translates[translate];
 
-
     let url = 'https://dummyjson.com/products'
 
     const products = await fetchWrapper<ProductsRoot>(url, {method: "GET"}) 
     
-
     // const data = Object.keys(result)[0];
 
-
-
     return (
+        
         <main>
  
             <Div>
@@ -508,15 +492,15 @@ async function MainComponent(props:ComponentProtocol) {
 
                     <pre>
                       
-
                     </pre>
+
                 </section>
-
+                
             </Div>
-
             
         </main>
     )
 }
+
 
 export default MainComponent

@@ -3,6 +3,7 @@ import { SchemaComponent } from "@/types";
 import Div from "./styles";
 import { GoX } from "react-icons/go";
 import { TbShoppingBag } from "react-icons/tb";
+import LogInSignInModal from "../../../organisms/LogInSignInModal";
 
 
 "0isbEW5a5D1Qwndv"
@@ -135,6 +136,8 @@ function HeaderComponent(props: SchemaComponent) {
                 }
 
             </Div>
+
+            <LogInSignInModal/>
             
         </header>
 

@@ -308,6 +308,7 @@ const Div = styled.div`
                 color: rgba(47,109,211,1);
                 white-space: nowrap;
                 font-size: 14px;
+                
             }
         }
       

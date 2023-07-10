@@ -18,15 +18,15 @@ type Cookie = {
 
 async function SetCookies() {
 
-    cookies().set({
-        expires: new Date('2023-10-05'),
-        name: 'TokenAuth',
-        value: '565266898989898965',
-        httpOnly: true,
-        path: '/',
-        secure: true
+    // cookies().set({
+    //     expires: new Date('2023-10-05'),
+    //     name: 'TokenAuth',
+    //     value: '565266898989898965',
+    //     httpOnly: true,
+    //     path: '/',
+    //     secure: true
       
-    })
+    // })
 
     const TokenAuth_Cookie = { 
         name: 'TokenAuth',

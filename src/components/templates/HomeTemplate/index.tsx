@@ -13,7 +13,7 @@ import { lang } from '@/utils/langConfig'
 import { Metadata } from 'next'
 import CookiesComponent from '@/components/organisms/CookiesAlertComponent'
 import ChatButtonOrganism from '@/components/organisms/ChatButtonComponent'
-import LogInSignInModal from './LogInSignInModal'
+import LogInSignInModal from '../../organisms/LogInSignInModal'
 
  
 export const metadata: Metadata = {
@@ -51,8 +51,6 @@ export default async function HomeTemplate() {
             </Suspense>
 
             <FooterComponent lang='pt-BR'/>
-
-            <LogInSignInModal/>
 
             <CookiesComponent/>
 
