@@ -136,8 +136,6 @@ function HeaderComponent(props: SchemaComponent) {
                 }
 
             </Div>
-
-            <LogInSignInModal/>
             
         </header>
 

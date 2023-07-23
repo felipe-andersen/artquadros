@@ -14,6 +14,8 @@ import { Metadata } from 'next'
 import CookiesComponent from '@/components/organisms/CookiesAlertComponent'
 import ChatButtonOrganism from '@/components/organisms/ChatButtonComponent'
 import LogInSignInModal from '../../organisms/LogInSignInModal'
+import { ThemeProvider } from 'styled-components'
+import myTheme from '@/libs/myTheme'
 
  
 export const metadata: Metadata = {
@@ -56,8 +58,6 @@ export default async function HomeTemplate() {
 
             <ChatButtonOrganism/>
 
-
-     
         </Div>
 
     )

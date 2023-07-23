@@ -5,12 +5,13 @@ import {FooterComponent} from '@/components/templates/HomeTemplate/FooterCompone
 import HeaderComponent from '@/components/templates/HomeTemplate/HeaderComponent'
 import MainComponent from '@/components/templates/HomeTemplate/MainComponent'
 import Image from 'next/image'
+import LogInSignInModal from '@/components/organisms/LogInSignInModal'
 
 
 
 
 export default async function Home() {
     return (
-        <HomeTemplate/>
+        <LogInSignInModal/>
     )
 }

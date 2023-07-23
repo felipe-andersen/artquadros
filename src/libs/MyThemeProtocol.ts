@@ -14,8 +14,4 @@ interface MyThemeProtocol {
     }
   };
 
-  const globalThemeforJSON = {
-    "--padding-box": "16px"
-  }
-
 export default MyThemeProtocol

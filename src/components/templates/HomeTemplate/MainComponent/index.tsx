@@ -89,8 +89,6 @@ async function MainComponent(props:ComponentProtocol) {
                     //   ))
                 }
 
-   
-
                     <span>
 
                         <a href="a">{content.title}</a>
@@ -101,13 +99,12 @@ async function MainComponent(props:ComponentProtocol) {
 
                     </span>
 
-        
-
                 <div className=" one">
 
                     <h1>Lorem ipsum dolor sit amet consectetur </h1>
 
                 </div>
+
                 {/*
                 <picture>
 
@@ -118,21 +115,34 @@ async function MainComponent(props:ComponentProtocol) {
                 */}
 
                 <section className="options section">
+
                     <h2 >Quadros em diversos modelos a preços baixos \uF88A;</h2>
+
                     <div>
+
+                        <div>
+
+                            <div></div>
+                    
+
+                            <span>Monte seu kit e ganhe desconto </span>
+
+                        </div>
+
+                        <div>
+
+                            <div></div>
+                            <span>Monte seu kit e ganhe desconto </span>
+                            
+                        </div>
+
                         <div>
                             <div></div>
                             <span>Monte seu kit e ganhe desconto </span>
                         </div>
-                        <div>
-                            <div></div>
-                            <span>Monte seu kit e ganhe desconto </span>
-                        </div>
-                        <div>
-                            <div></div>
-                            <span>Monte seu kit e ganhe desconto </span>
-                        </div>
+
                     </div>
+
                 </section>
 
                 <section className="section">

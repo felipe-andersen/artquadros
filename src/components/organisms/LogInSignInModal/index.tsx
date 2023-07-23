@@ -3,10 +3,29 @@ import { SchemaComponent } from "@/types";
 import { AiFillCloseCircle, AiOutlineInfoCircle } from "react-icons/ai";
 import { RiEyeCloseFill, RiEyeCloseLine } from "react-icons/ri";
 import { IoIosEye } from "react-icons/io";
+import { BiCheck } from "react-icons/bi";
 import 'animate.css';
 import { GoX } from "react-icons/go";
 import Div from "./styles";
-import { useState } from "react";
+import { ReactHTMLElement, useState } from "react";
+import { ThemeProvider } from "styled-components";
+import Link from "next/link";
+import  InputComponent  from "@/components/molecules/input";
+
+
+type Border = {
+    dafault: string
+    valid: string
+    invalid: string
+    caution: string
+};
+
+type BoxShadow = {
+    dafault: string
+    valid: string
+    invalid: string
+    caution: string
+};
 
 
 function LogInSignInModal(props: SchemaComponent) {
@@ -18,44 +37,106 @@ function LogInSignInModal(props: SchemaComponent) {
 
     const content =  translates[1];
 
-    const [visible, setVisible] = useState<boolean>(true);
+    const [ visible, setVisible ] = useState<boolean>(true);
 
-    const [valid, setValid] = useState<boolean>(false);
+    const [ inputType, setInputType ] = useState("password");
 
-    const [form, setForm] = useState<string>("Log In")
+    const [ valid, setValid ] = useState<boolean>(false);
 
-    let typeForm 
+    const [ form, setForm ] = useState<string>("Log In");
+
+    const [ borderColor, setBorderColor ] = useState<string>("1px solid red");
+
+    const [ boxShadow, setBoxShadow ] = useState<string>("0 0 2px rgba(28, 106, 252)");
+
+    const [ validation, setValidation ] = useState("default");
+
+    const require = true;
+
+    let typeForm ;
 
     function handleSubmit(e:any) {
         e.preventDefault();
         console.log('You clicked submit.');
-      }
+    };
     
-    function prenvent ( ) {
+    function handleShowHidePassword() {
 
-        visible ? setVisible(false) : setVisible(true)
-    }
+        visible ? setVisible(false) : setVisible(true);
 
+        inputType === "password" ? setInputType("text") : setInputType("password")
+    };
+
+    function inputClear(){
+        
+    };
+
+    const [value, setValue] = useState("");
+
+    let f = document.getElementById("inputPassword");
+
+    function handleFocus() {
+
+        type validate = "not validated" | "valid" | 'invalid' | 'caution'
+
+        let validation:validate = "valid";
+
+        const border: Border = {
+            dafault: "1px solid rgba(235, 235, 235)",
+            valid: "1px solid rgba(28, 106, 252)",
+            invalid: "blue",
+            caution: "red" 
+        };
+
+        const boxShadow: BoxShadow = {
+            dafault: "",
+            valid: "",
+            invalid: "",
+            caution: ""
+        };
+    };
+
+    function E() {
+        return "1px solid orange"
+    };
+
+    const input = document.getElementById(
+        'inputPassword',
+    ) as HTMLInputElement | null;
+    
+    if (input != null) {
+
+        input.addEventListener("input", () => {
+            console.log("")
+        })
+    };
+
+// export declare type LinkProps = {
+//     href: Url;
+//     as?: Url;
+//     replace?: boolean;
+//     scroll?: boolean;
+//     shallow?: boolean;
+//     passHref?: boolean;
+//     prefetch?: boolean;
+// }
     return (
 
         <Div>
 
         <section className="animate__animated animate__bounceInUp">
 
-
             <div className="info-close--container">
                 <i title="Info"><AiOutlineInfoCircle/></i>
                 <i title="Close"><GoX/></i>
             </div>
 
-            
-
                 {
                     form === "Log In" ? 
 
-                    <div>
+                    <div className="form--container form formLogIn animate__animated animate__fadeInLeft">
 
-                        <span className="registryTitle">
+                        <span className="titleForm">
 
                             <h2>Log in to your account</h2>
 
@@ -63,15 +144,21 @@ function LogInSignInModal(props: SchemaComponent) {
 
                         <form onSubmit={handleSubmit}>
                             
-                            <div>
+                            <div className="input--container">
 
-                                <label className="label" style={{display:"flex", flexDirection: "column"}}>
+                            <InputComponent/>
+
+                                
+                                <label className="label">
 
                                     <span>Email</span>
 
                                     <div>
 
-                                        <input placeholder={content.emailPlaceholder}></input>
+                                        <input 
+                                            placeholder={content.emailPlaceholder} 
+                                            spellCheck={false}
+                                        />
 
                                         <div>
 
@@ -83,65 +170,49 @@ function LogInSignInModal(props: SchemaComponent) {
                                     
                                 </label>
 
-                                <label className="label" style={{display:"flex", flexDirection: "column"}}>
-
-                                    <span>{content.password}</span>
-
-                                    <div>
-
-                                        <input placeholder={content.passwordPlaceholder}></input>
-
-                                        <div>
-
-                                            <button onClick={() => prenvent} id="form_btns"><AiFillCloseCircle/></button>
-
-                                            {
-                                                visible ?  
-
-                                                <button onClick={() => visible ? setVisible(false) : setVisible(true)} id="form_btns" title="Hide">
-                                                    <RiEyeCloseFill/>
-                                                </button> 
-
-                                                :  
-
-                                                <button onClick={() => visible ? setVisible(false) : setVisible(true)} id="form_btns" title="Show">
-                                                    <IoIosEye/>
-                                                </button>
-                                            }
-
-                                        </div>
-
-                                    </div>
-                                    
-                                </label>
-
                                 <span className="validationMsg" >
 
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, veritatis. Id voluptatem animi ea aut doloremque nesciunt, debitis cum eligendi. Ad obcaecati tenetur expedita. Est itaque sunt pariatur voluptatum suscipit.
-                                        
-                                        
+                                    Invalid email.
+
+                                    <br></br>
+
                                 </span>
 
+                               
+
+                                
                             </div>
 
                             <div className="btns">
 
                                 {/* <input className="submit" type="submit" title="Entrar"></input> */}
 
-                                <button className="">Forgot the password</button>
+                                <button className="">Forgot the password
+                                    {/* <span>&#8594;</span> */}
+                                </button>
 
-                                <button className="submit">
+                                <button 
+                                    className="submit" 
+                                    onClick={() => borderColor === "1px solid blue" ? setBorderColor("1px solid red") : setBorderColor("1px solid blue")}
+                                >
 
                                     {
                                         valid ? 
 
                                         <div>
-                                            <span className="lds-dual-ring"/>
+
+                                            <div className="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+
                                         </div> 
-                                        
+                            
                                         :
 
-                                        <span>Log in</span>
+                                        <div>
+
+                                            <span>Log In</span>
+
+                                        </div> 
+
 
                                     }
                                     
@@ -151,7 +222,12 @@ function LogInSignInModal(props: SchemaComponent) {
 
                             <div className="or">
 
-                                <span/><div>or</div> <span/>
+                                <span/>
+
+                                <div>or</div>
+
+                                <span/>
+                               
 
                             </div>
 
@@ -195,9 +271,9 @@ function LogInSignInModal(props: SchemaComponent) {
 
                     :
 
-                    <div>
+                    <div className="form--container form formRegistry animate__animated animate__fadeInLeftBig">
 
-                        <span className="registryTitle">
+                        <span className="titleForm">
 
                             <h2>Registry</h2>
 
@@ -207,11 +283,11 @@ function LogInSignInModal(props: SchemaComponent) {
 
                             <div>
 
-                                <label className="label" style={{display:"flex", flexDirection: "column"}}>
+                                <label className="label">
 
-                                    <span>Email</span>
+                                    <span>Email&nbsp;<i className="req">*</i></span>
 
-                                    <div>
+                                    <div className="input-ctrls--container">
 
                                         <input placeholder={content.emailPlaceholder}></input>
 
@@ -225,17 +301,17 @@ function LogInSignInModal(props: SchemaComponent) {
                                     
                                 </label>
 
-                                <label className="label" style={{display:"flex", flexDirection: "column"}}>
+                                <label className="label">
 
-                                    <span>{content.password}</span>
+                                    <span>{content.password}*</span>
 
-                                    <div>
+                                    <div className="">
 
-                                        <input placeholder={content.passwordPlaceholder}></input>
+                                        <input placeholder={content.passwordPlaceholder} id="typepass" type={inputType}></input>
 
                                         <div>
 
-                                            <button onClick={() => prenvent} id="form_btns"><AiFillCloseCircle/></button>
+                                            <button id="form_btns clearInput" title="Clear"><AiFillCloseCircle/></button>
 
                                             {
                                                 visible ?  
@@ -260,7 +336,6 @@ function LogInSignInModal(props: SchemaComponent) {
                                 <span className="validationMsg" >
 
                                     {/* <strong>Invalid. </strong> */}
-                                        
                                         
                                 </span>
 
@@ -333,7 +408,11 @@ function LogInSignInModal(props: SchemaComponent) {
                                         
                                         :
 
-                                        <span>Registry</span>
+                                      
+                                           <span className="">Registry</span>
+                                    
+
+                                     
 
                                     }
                                     
@@ -343,25 +422,27 @@ function LogInSignInModal(props: SchemaComponent) {
 
                         </form>
 
+                        <p>
+                                Signing up signifies that you have read and agree to the <Link href={"#"}>Terms of Service</Link> and our  <Link href={"#"}>Privacy Policy</Link>.
+                                Cookie Preferences.
+                            </p>
+
                     </div>
 
                 }
 
-        
-
-
-            <div>
+            <div className="formSwitch">
 
                 {/* <button>Sign in</button> */}
 
                 {
                     form === "Log In" ? 
                     
-                    <button onClick={() => setForm("Registry")}>Log In</button>
+                    <button onClick={() => setForm("Registry")}>Registry</button>
 
                     :
 
-                    <button onClick={() => setForm("Log In")}>Registry</button>
+                    <button onClick={() => setForm("Log In")}> Log In</button>
 
                 }
 
@@ -370,6 +451,7 @@ function LogInSignInModal(props: SchemaComponent) {
         </section>
 
         </Div>
+
     )
 };
 
