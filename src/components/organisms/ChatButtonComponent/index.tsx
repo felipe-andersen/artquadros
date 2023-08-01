@@ -1,13 +1,13 @@
 'use client'
 
 import { CiChat1 } from "react-icons/ci";
-import { Button } from "./styles"
+import { Button as Button_SC} from "./styles"
 
-function ChatButtonOrganism () {
+function ChatButtonOrganism() {
     return (
-        <Button>
-            <CiChat1/>
-        </Button>
+        <Button_SC data-testid="BtnSC">
+            <CiChat1 />
+        </Button_SC>
     )
 };
 

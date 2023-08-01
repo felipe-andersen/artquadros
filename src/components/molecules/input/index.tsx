@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, useRef, useState } from "react";
 import { AiFillCloseCircle } from "react-icons/ai";
 import { RiEyeCloseFill } from "react-icons/ri";
 import { IoIosEye } from "react-icons/io";
@@ -14,7 +14,7 @@ interface translate {
     validationMsg: string //inputValidationMessage
 };
 ""
-
+type Display = 'flex' | 'none';
 
 type Validation = "Valid" | "Invalid" | "Alert"
 
@@ -80,9 +80,10 @@ function InputComponent() {
 
     let typeForm;
 
+    const inputRef = useRef<HTMLInputElement>(null);
+
     function handleSubmit(e:any) {
         e.preventDefault();
-        console.log('You clicked submit.');
     };
     
     function handleShowHidePassword() {
@@ -167,14 +168,36 @@ function InputComponent() {
         //   } )
     };
 
-    // setTimeout(  
-    //     function i() {
-    //         setValue(input!.value)
-    //     }, 3000
-    // )
+    let inputValue = inputRef.current?.value
+    
+    function isString(inputValue: string | undefined): inputValue is string {
+        return typeof inputValue === "string";
+    }
 
-    type Display = 'flex' | 'none';
+    function isUndefined(inputValue: string | undefined): inputValue is undefined {
+        return typeof inputValue === "undefined";
+    };
 
+    setTimeout(
+        // () => {
+        //     if (isString(inputValue)) {
+        //         console.log(value)
+        //       setValue(inputValue) 
+                
+        //     } else if (isUndefined(inputValue)) {
+        //         console.log(value);
+        //         setValue("");
+        //     } else {
+               
+        //     }
+        // }, 6000
+
+        () => {
+
+            if (inputValue != undefined){setValue(inputValue); console.log(value)}
+            else {setValue(""); console.log(value)}
+        }, 6000
+    );   
     
     function IconValidation () {
         if (isValid === "Valid") return <span title="Valid"><BiCheck/></span>
@@ -186,8 +209,8 @@ function InputComponent() {
     return (
         <div className="">
 
-            <span>{content.password} {value}</span>
-
+            <span>{content.password}</span>
+{value}
             <div>
 
                 <div 
@@ -197,18 +220,20 @@ function InputComponent() {
                 >
 
                     <input 
-                        value={value} 
-                        onChange={(e) => {setValue(e.target.value),setDisplay('flex')}}
+                     
+                        onChange={(e) => {setDisplay('flex')}}
                         placeholder={content.passwordPlaceholder} 
                         id="inputPassword input" 
                         type={inputType}
+                        ref={inputRef}
                     />
-                    <div className="inputBtns">
+                    <div className="inputBtns"> {/*rename */}
 
                         <button 
                             onClick={j} 
                             id="form_btns resetButton"
                             style={{display: display}}
+                            type="button"
 
                         >
 
@@ -222,6 +247,7 @@ function InputComponent() {
                             <button 
                                 onClick={() => {handleShowHidePassword(), setIsValid('Alert')}}id="form_btns" 
                                 title="Hide"
+                                type="button"
                             >
                                 <RiEyeCloseFill /*className="closedEye"*//>
                                 
@@ -233,6 +259,7 @@ function InputComponent() {
                                 onClick={() => handleShowHidePassword()} 
                                 id="form_btns" 
                                 title="Show"
+                                type="button"
                             >
                                 <IoIosEye /*className="openedEye"*//>
 
@@ -249,7 +276,7 @@ function InputComponent() {
 
                 </div>
 
-                <span className="validationMsg" >
+                <span className="validationMsg" >{/*rename */}
 
                     Incorrect password.
 

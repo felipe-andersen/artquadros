@@ -6,12 +6,13 @@ import HeaderComponent from '@/components/templates/HomeTemplate/HeaderComponent
 import MainComponent from '@/components/templates/HomeTemplate/MainComponent'
 import Image from 'next/image'
 import LogInSignInModal from '@/components/organisms/LogInSignInModal'
+import CategoryComponent from './category/page'
 
 
 
 
 export default async function Home() {
     return (
-        <LogInSignInModal/>
+        <HomeTemplate/>
     )
 }

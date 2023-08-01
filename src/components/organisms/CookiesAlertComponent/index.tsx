@@ -1,29 +1,56 @@
 'use client'
 
+import { usePathname } from "next/navigation";
 import { Div } from "./styles"
 import { GoX } from "react-icons/go";
+import Link from "next/link";
+import hostingHTTP from "@/utils/hostingHTTP";
+import { useState } from "react";
 
-function CookiesComponent () {
+interface Props {
+   
+}
+
+function CookiesComponent ({}:Props) {
+
+    const [display, setDisplay] = useState<boolean>(true);
+
+    const pathname =  usePathname()
+
+    console.log(pathname)
+
     return (
         <Div>
 
-            <button className="close"><GoX/></button>
+            {
+                display ? 
 
-            <picture>
-                <img src="https://thumbs.dreamstime.com/b/cookie-deliciosa-dos-desenhos-animados-do-vetor-com-os-peda%C3%A7os-de-chocolate-isolados-sobre-97523699.jpg"/>
-            </picture>
+                <>
+                    <button className="close"><GoX/></button>
 
-            <strong>Cookies</strong>
+                    <picture>
+                        <img src="https://thumbs.dreamstime.com/b/cookie-deliciosa-dos-desenhos-animados-do-vetor-com-os-peda%C3%A7os-de-chocolate-isolados-sobre-97523699.jpg"/>
+                    </picture>
 
-            <span>Usamos cookies para personalizar anúncios e melhorar a sua experiência no site. Ao continuar navegando, você concorda com a nossa <a>Política de Privacidade</a>.</span>
+                    <strong>Cookies</strong>
 
-            <button className="accept">Aceitar e continuar</button>
+                    <span>Usamos cookies para personalizar anúncios e melhorar a sua experiência no site. Ao continuar navegando, você concorda com os <Link href={`${hostingHTTP}/category`}>Termos de Uso</Link> e <Link href={`${hostingHTTP}/category`}>Política de Privacidade</Link>.</span>
 
-            <button className="manage accept">Gerenciar cookies</button>
+                    <button 
+                        className="accept"
+                        onClick={() => setDisplay(false)}>Aceitar e continuar</button>
 
-            <button className="reject">Rejeitar</button>
+                    <button className="manage accept">Gerenciar cookies</button>
 
-            
+                    <button className="reject" style={{display:'none'}}>Rejeitar</button>
+
+                </> 
+
+                : 
+                
+                <></>
+            }
+
         </Div>
     )
 };

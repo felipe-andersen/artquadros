@@ -1,3 +1,4 @@
+import fs from 'fs';
 import { ProductsRoot, SchemaComponent } from "@/types";
 import Div from "./styles"
 import Image from 'next/image'
@@ -5,8 +6,9 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { ApolloClient, useQuery } from "@apollo/client";
 import { Categories, Category } from "@/models/categories/types";
-import { fetchWrapper } from "@/utils/fetchAPI/fetchAPI";
+import { fetchAPI } from "@/utils/fetchAPI/fetchAPI";
 import { assert } from "console";
+import { usePathname } from "next/navigation";
 
 
 // import { GET_LOCATIONS } from "@/graphql/query/locations";
@@ -40,7 +42,7 @@ export const ComponentData: ComponentProtocol = {
         urls: {
             productsURL: "https://dummyjson.com/products"
         },
-        products: undefined
+        products: "undefined"
 
     }
 };
@@ -64,13 +66,26 @@ async function MainComponent(props:ComponentProtocol) {
 
     let url = 'https://dummyjson.com/products'
 
-    const products = await fetchWrapper<ProductsRoot>(url, {method: "GET"}) 
+    let products = await fetchAPI<ProductsRoot>(url, {method: "GET"})
     
     // const data = Object.keys(result)[0];
 
+    const filePath = 'src/assets/categoryList.json';
+
+    let categoryList 
+
+    try {
+        const fileContents = fs.readFileSync(filePath, 'utf8');
+        categoryList = JSON.parse(fileContents);
+    } catch (error) {
+        categoryList = null
+        console.error('Error reading JSON file:', error);
+    }
+
+
     return (
         
-        <main>
+        <main data-testid="main">
  
             <Div>
 
@@ -124,7 +139,6 @@ async function MainComponent(props:ComponentProtocol) {
 
                             <div></div>
                     
-
                             <span>Monte seu kit e ganhe desconto </span>
 
                         </div>
@@ -397,7 +411,7 @@ async function MainComponent(props:ComponentProtocol) {
 
                 </section>
 
-                <section className="details section">
+                <section className="details section accordion">
 
                     <h2 className="h2">Dúvidas Frequentes</h2>
 

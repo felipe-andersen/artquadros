@@ -20,7 +20,7 @@ import myTheme from '@/libs/myTheme'
  
 export const metadata: Metadata = {
     title: 'Artquadros',
-};
+}
 
 function delayForDemo(promise:any) {
     return new Promise(resolve => {
@@ -32,29 +32,23 @@ const MainComponent_ = lazy(() => delayForDemo(import('./MainComponent')));
 
 
 interface ComponentProtocol<SchemaComponent> {
-    content: Object;
-};
+    content: Object
+}
 
 export default async function HomeTemplate() {
 
 
     return (
 
-        <Div>
+        <Div data-testID="tamplate">
 
-            <HeadComponent/>
+            <HeadComponent data-testid="HeadComponent"/>
 
-            <HeaderComponent lang='pt-BR'/>
+            <HeaderComponent/>
 
-            <Suspense fallback={<div>Loading</div>}>
-
-                <MainComponent/>
-             
-            </Suspense>
-
-            <FooterComponent lang='pt-BR'/>
-
-            <CookiesComponent/>
+            <MainComponent/>
+  
+            <FooterComponent/>
 
             <ChatButtonOrganism/>
 

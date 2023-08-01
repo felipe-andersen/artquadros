@@ -1,4 +1,4 @@
-import { JsxElement } from "typescript";
+import { JsxElement } from "typescript"
 
 export type SchemaComponent = {
     lang?: string;
@@ -20,26 +20,27 @@ export type Product = {
     category: string,
     thumbnail: string,
     images: Array<any>
-};
+}
   
 export type ProductsRoot = {
     products: Product[]
     total: number
     skip: number
     limit: number
-};
+}
+
 export interface Root {
     users: User[]
     total: number
     skip: number
     limit: number
   }
-  
-  export interface User {
+
+export interface User {
     id: number
     firstName: string
     lastName: string
-    maidenName: string
+    middleName: string
     age: number
     gender: string
     email: string
@@ -58,39 +59,27 @@ export interface Root {
     ssn: string
     userAgent: string
   }
-  
-  export interface Address {
+
+export interface Company {
+    id: string
+    address: Address
+    department: string
+    name: string
+    title: string
+}
+
+export interface Address {
+    id: string
     country: string
     address: string
     city: string
     coordinates: Coordinates
     postalCode: string
     state: string
-  }
-  
-  export interface Coordinates {
+}
+
+export interface Coordinates {
     lat: number
     lng: number
-  }
-  
-  export interface Company {
-    address: Address2
-    department: string
-    name: string
-    title: string
-  }
-  
-  export interface Address2 {
-    country: string
-    address: string
-    city: string
-    coordinates: Coordinates2
-    postalCode: string
-    state: string
-  }
-  
-  export interface Coordinates2 {
-    lat: number
-    lng: number
-  }
+}
                 

@@ -1,9 +1,15 @@
+'use client'
+
 import { SchemaComponent } from "@/types";
 import { Div, Title } from "./styles"
+import CookiesComponent from "@/components/organisms/CookiesAlertComponent";
+import { useState } from "react";
 
+const ManageCookie = CookiesComponent
 
+export function FooterComponent(props:SchemaComponent) {
 
-export async function FooterComponent(props:SchemaComponent) {
+    const [showCookiesComponent, setShowCookiesComponent] = useState<boolean>(true);
     const {} = props;
 
     return (
@@ -63,6 +69,9 @@ export async function FooterComponent(props:SchemaComponent) {
                 </p>
 
             {/* </Div> */}
+
+            
+                <ManageCookie/>
 
         </footer>
     )
