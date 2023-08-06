@@ -1,6 +1,6 @@
 'use client'
 
-import { SchemaComponent } from "@/types";
+import { SchemaComponent } from "@/@types";
 import { Div, Title } from "./styles"
 import CookiesComponent from "@/components/organisms/CookiesAlertComponent";
 import { useState } from "react";

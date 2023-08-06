@@ -8,8 +8,8 @@ import {
   ThemeProvider,
 } from "styled-components";
 import theme from "@/theme";
-import GlobalStyle from "./libs/ThemeConfig";
-import myTheme from "./libs/myTheme";
+import GlobalStyle from "./libs/styledComponents/ThemeConfig";
+import myTheme from "./libs/styledComponents/myTheme";
 
 
 export default function StyledComponentsRegistry({

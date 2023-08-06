@@ -1,4 +1,4 @@
-import { ProductsRoot } from "@/types"
+import { ProductsRoot } from "@/@types"
 
 
 export async function fetchAPI<T = unknown>(input:RequestInfo | URL, init?: RequestInit | undefined) {

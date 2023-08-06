@@ -1,5 +1,5 @@
 'use client'
-import { SchemaComponent } from "@/types";
+import { SchemaComponent } from "@/@types";
 import { AiFillCloseCircle, AiOutlineInfoCircle } from "react-icons/ai";
 import { RiEyeCloseFill, RiEyeCloseLine } from "react-icons/ri";
 import { IoIosEye } from "react-icons/io";

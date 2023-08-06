@@ -1,5 +1,5 @@
 'use client'
-import { SchemaComponent } from "@/types";
+import { SchemaComponent } from "@/@types";
 import Div from "./styles";
 import { GoX } from "react-icons/go";
 import { TbShoppingBag } from "react-icons/tb";

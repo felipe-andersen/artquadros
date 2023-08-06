@@ -1,5 +1,5 @@
 'use client'
-import { SchemaComponent } from "@/types";
+import { SchemaComponent } from "@/@types";
 import { Div } from "./styles";
 import { cookies } from "next/dist/client/components/headers";
 

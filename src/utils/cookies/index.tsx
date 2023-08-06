@@ -30,7 +30,7 @@ async function SetCookies() {
 
     const TokenAuth_Cookie = { 
         name: 'TokenAuth',
-        value: '565266898989898965',
+        value: [],
         domain: '',
         path: '/',
         maxAge:undefined,

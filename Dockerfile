@@ -1,6 +1,8 @@
+
+
+
 FROM node:18-alpine
-ARG foo: bar
-WORKDIR /user/App
+WORKDIR /usr/share/app
 COPY package.json ./ 
 RUN npm install
 COPY . .

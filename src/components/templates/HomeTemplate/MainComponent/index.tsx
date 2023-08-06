@@ -1,5 +1,5 @@
 import fs from 'fs';
-import { ProductsRoot, SchemaComponent } from "@/types";
+import { ProductsRoot, SchemaComponent } from "@/@types";
 import Div from "./styles"
 import Image from 'next/image'
 import { useEffect, useState } from "react";

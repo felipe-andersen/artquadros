@@ -1,5 +1,6 @@
 import { DefaultTheme } from "styled-components";
-import MyThemeProtocol from "@/packagesConfig/MyThemeProtocol";
+import MyThemeProtocol from "./libs/styledComponents/MyThemeProtocol";
+
 
 
 declare module "styled-components" {

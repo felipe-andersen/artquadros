@@ -12,5 +12,12 @@ yarn dev
 pnpm dev
 ```
 
+With Docker
+
+```bash
+docker build -t app-container .
+docker run -it app-container sh
+```
+
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 

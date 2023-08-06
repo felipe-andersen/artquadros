@@ -1,4 +1,4 @@
-import { SchemaComponent } from "@/types";
+import { SchemaComponent } from "@/@types";
 import { Button } from "./style";
 
 // function LogInSignInModal(props: SchemaComponent) {

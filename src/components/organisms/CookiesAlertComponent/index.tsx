@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation";
 import { Div } from "./styles"
 import { GoX } from "react-icons/go";
 import Link from "next/link";
-import hostingHTTP from "@/utils/hostingHTTP";
+import hostingHTTP from "@/utils/baseURL";
 import { useState } from "react";
 
 interface Props {
