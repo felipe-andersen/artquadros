@@ -3,9 +3,9 @@
 
 
 
-// const client = createClient({
-//     username: 'default', // use your Redis user. More info https://redis.io/docs/management/security/acl/
-//     password: 'secret', // use your password here
+// const client = createClient(/*{
+//     username: 'adminer', // use your Redis user. More info https://redis.io/docs/management/security/acl/
+//     password: '564234', // use your password here
 //     socket: {
 //         host: 'my-redis.cloud.redislabs.com',
 //         port: 6379,
@@ -14,11 +14,13 @@
 //         cert: readFileSync('./redis_user.crt'),
 //         ca: [readFileSync('./redis_ca.pem')]
 //     }
-// });
+// }*/);
 
 // client.on('error', (err) => console.log('Redis Client Error', err));
 
 
-// async function connectRedis() {
+// export async function connectRedis() {
 //     await client.connect();
 // }
+
+

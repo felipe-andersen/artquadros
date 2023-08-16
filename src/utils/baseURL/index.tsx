@@ -1,6 +1,12 @@
-const hostingHTTP = `http://localhost:3000`
+import { lang } from "../langConfig"
 
-export default hostingHTTP
+type TLDT = 'com' | 'com.br'
+
+export const TLD: TLDT = `com.br` 
+
+const baseURL = `www.artquadros.${TLD}`
+
+export default baseURL
 
 /*
     /t./g  t e qualquer outro caractere
@@ -8,7 +14,5 @@ export default hostingHTTP
 
     /(i|I)/g  ou
     /(^et)/g menos ou negar
-
-
 
 */

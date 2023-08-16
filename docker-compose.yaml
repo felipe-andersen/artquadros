@@ -1,6 +1,13 @@
 
 version: '3.8'
 
+networks:
+        app_net:
+            driver: bridge
+
+        exemple_net:
+            driver: bridge
+
 services:
     # for development use
     app:
@@ -8,33 +15,23 @@ services:
         container_name: app
         ports:
             - 3000:3000
-        networks:
-            - default
+
+    cache:
+        image: redis:latest
+        container_name: redis
+        restart: always
+
+    redis_insight:
+        image: redislabs/redisinsight:latest
+        container_name: redis_insight
+        restart: always
+        ports:
+            - 8001:8001
+       
             
-    # frontend: 
-    
-    # backend:
+       
 
-    cache: 
-        image: redis/redis-stack-server:latest
-        container_name: redis-service
-        ports: 
-            - 10001:6379
-            - 13333:8001
-        networks:
-            - default
-
-networks:
-    default:
-        driver: custom-driver-1
-
-    frontend:
-        driver: custom-driver-2
-
-    backend:
-        driver: custom-driver-3
    
-
 
         
         

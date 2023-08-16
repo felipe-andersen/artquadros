@@ -15,7 +15,8 @@ import CookiesComponent from '@/components/organisms/CookiesAlertComponent'
 import ChatButtonOrganism from '@/components/organisms/ChatButtonComponent'
 import LogInSignInModal from '../../organisms/LogInSignInModal'
 import { ThemeProvider } from 'styled-components'
-
+import { QueryClientProvider } from 'react-query'
+import { appQueryClient } from '@/app/layout'
 
  
 export const metadata: Metadata = {
@@ -29,14 +30,11 @@ function delayForDemo(promise:any) {
   }
 
 const MainComponent_ = lazy(() => delayForDemo(import('./MainComponent')));
-
-
 interface ComponentProtocol<SchemaComponent> {
     content: Object
 }
 
 export default async function HomeTemplate() {
-
 
     return (
 

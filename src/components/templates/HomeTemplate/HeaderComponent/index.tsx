@@ -4,15 +4,29 @@ import Div from "./styles";
 import { GoX } from "react-icons/go";
 import { TbShoppingBag } from "react-icons/tb";
 import LogInSignInModal from "../../../organisms/LogInSignInModal";
+import { useEffect, useState } from "react";
+import { fetchAPI } from "@/utils/fetchAPI/fetchAPI";
+import { TLD } from "@/utils/baseURL";
+import { useQueryClient } from "react-query";
 
 
 "0isbEW5a5D1Qwndv"
 
 
-
 function HeaderComponent(props: SchemaComponent) {
 
-    const { lang, content, setContent } = props;
+    const data = fetchAPI(`artquadros.com${TLD ? "." : ""}${TLD}`)
+
+    useEffect(() => {
+        console.log('Welcome'),
+        []
+    })
+
+    const [state, setMyState] = useState(null)
+
+    const queryApp = useQueryClient()
+
+    const { lang, content, setContent } = props
 
     const minBreakpoint = false
 

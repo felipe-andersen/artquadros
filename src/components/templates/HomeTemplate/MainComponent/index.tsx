@@ -1,14 +1,20 @@
-import fs from 'fs';
-import { ProductsRoot, SchemaComponent } from "@/@types";
+import fs from 'fs'
+import { ProductsRoot, SchemaComponent } from "@/@types"
 import Div from "./styles"
 import Image from 'next/image'
-import { useEffect, useState } from "react";
-import Link from "next/link";
-import { ApolloClient, useQuery } from "@apollo/client";
-import { Categories, Category } from "@/models/categories/types";
-import { fetchAPI } from "@/utils/fetchAPI/fetchAPI";
-import { assert } from "console";
-import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react"
+import Link from "next/link"
+import { Categories, Category } from "@/models/categories/types"
+import { fetchAPI } from "@/utils/fetchAPI/fetchAPI"
+
+import { usePathname } from "next/navigation"
+import {
+    useQuery,
+    useMutation,
+    useQueryClient,
+    QueryClient,
+    QueryClientProvider,
+  } from 'react-query'
 
 
 // import { GET_LOCATIONS } from "@/graphql/query/locations";

@@ -50,11 +50,8 @@ export interface User {
     password: string
     birthDate: string
     image: string
-    bloodGroup: string
-    domain: string
     ip: string
     address: Address
-    macAddress: string
     ein: string
     ssn: string
     userAgent: string
