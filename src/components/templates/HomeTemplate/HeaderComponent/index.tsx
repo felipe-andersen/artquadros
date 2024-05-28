@@ -10,7 +10,13 @@ import { TLD } from "@/utils/baseURL";
 import { useQueryClient } from "react-query";
 
 
-"0isbEW5a5D1Qwndv"
+// pesquisar ocorrencias que começam com xyz, que contém xyz, 
+
+// pesquisar ocorrencias que começam com xyz ou pqr | xyz e pqr ([T][e]| [T][o])w+
+
+// principains itens da pesquisa no redis
+
+// filtragem regex a pesquisa, em cada idioma.
 
 
 function HeaderComponent(props: SchemaComponent) {
@@ -24,7 +30,7 @@ function HeaderComponent(props: SchemaComponent) {
 
     const [state, setMyState] = useState(null)
 
-    const queryApp = useQueryClient()
+    // const queryApp = useQueryClient()
 
     const { lang, content, setContent } = props
 

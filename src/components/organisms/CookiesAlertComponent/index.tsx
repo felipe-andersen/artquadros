@@ -13,17 +13,15 @@ interface Props {
 
 function CookiesComponent ({}:Props) {
 
-    const [display, setDisplay] = useState<boolean>(true);
-
     const pathname =  usePathname()
 
     console.log(pathname)
 
     return (
+
         <Div>
 
             {
-                display ? 
 
                 <>
                     <button className="close"><GoX/></button>
@@ -38,7 +36,8 @@ function CookiesComponent ({}:Props) {
 
                     <button 
                         className="accept"
-                        onClick={() => setDisplay(false)}>Aceitar e continuar</button>
+                    >Aceitar e continuar
+                    </button>
 
                     <button className="manage accept">Gerenciar cookies</button>
 
@@ -46,9 +45,6 @@ function CookiesComponent ({}:Props) {
 
                 </> 
 
-                : 
-                
-                <></>
             }
 
         </Div>

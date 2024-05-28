@@ -22,7 +22,7 @@ export function FooterComponent(props:SchemaComponent) {
                     <Title/>
 
 
-                    <span>
+                    <span className="hidden">
 
                         <span>Language: Portuguese (Brazil)</span>
 

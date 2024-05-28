@@ -384,17 +384,10 @@ const Div = styled.div`
         }
 
         .flexbox {
-            box-sizing: border-box;
-            width: 100%;
-            display: flex;
-            align-items: center;
-            background: rgba(0,0,0,0);
-            overflow: scroll;
-            overflow-y: hidden;
-            overflow-x: scroll;
-            gap: 12px;
-            padding: 0;
-            margin: 0;
+        display: flex;
+        gap: 12px;
+        justify-content: flex-start;
+   
 
             ::-webkit-scrollbar {
                 background: transparent;
@@ -455,7 +448,7 @@ const Div = styled.div`
             
             .item {
 
-                background: rgba(235,235,235,0);
+                /* background: rgba(235,235,235,0); */
                 display: flex;
                 align-items: center;
                 min-width: 232px;
@@ -467,6 +460,7 @@ const Div = styled.div`
 
                 overflow: hidden;
                 border-radius: 8px;
+                padding: 0;
                                          /*dinamic value*/
     
                 a {
@@ -502,19 +496,20 @@ const Div = styled.div`
                         height: 100%;
                         margin: 0;
                         padding:0;
-                        background: rgba(235,235,235,1);
+                        background: #ffffff;
                      
 
                         img {
                        
                             width: 100%;
-                            height: min-content;
-                            transform: scale(300%);
+                         
+                            /* transform: scale(300%); */
                       
                         }
                     }
                 }
 
+                /* 
                 div {
                     box-sizing: border-box;
                     height: 150px;
@@ -525,12 +520,16 @@ const Div = styled.div`
                     font-size: 14px;
                     display: flex;
                     flex-direction: column;
+                    color: red;
+                    white-space: nowrap;
+                  
 
                     span:nth-child(1) {
-                        font-weight: 600;
+                        font-weight: 800;
 
                     }
-                }
+                } 
+                */
 
             }
         }
@@ -551,7 +550,7 @@ const Div = styled.div`
                 height: 42px;
                 border-radius: 6px;
                 border: 3px solid rgba(0,0,0,0.1);;
-                oullilne: black;
+                outline: black;
             }
         }
     }

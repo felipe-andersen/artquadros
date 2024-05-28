@@ -16,7 +16,7 @@ import ChatButtonOrganism from '@/components/organisms/ChatButtonComponent'
 import LogInSignInModal from '../../organisms/LogInSignInModal'
 import { ThemeProvider } from 'styled-components'
 import { QueryClientProvider } from 'react-query'
-import { appQueryClient } from '@/app/layout'
+// import { appQueryClient } from '@/app/layout'
 
  
 export const metadata: Metadata = {
@@ -40,7 +40,7 @@ export default async function HomeTemplate() {
 
         <Div data-testID="tamplate">
 
-            <HeadComponent data-testid="HeadComponent"/>
+            {/* <HeadComponent />
 
             <HeaderComponent/>
 
@@ -48,7 +48,9 @@ export default async function HomeTemplate() {
   
             <FooterComponent/>
 
-            <ChatButtonOrganism/>
+            <ChatButtonOrganism/> */}
+
+            <LogInSignInModal/>
 
         </Div>
 

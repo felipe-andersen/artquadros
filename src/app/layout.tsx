@@ -2,13 +2,13 @@
 import StyledComponentsRegistry from '@/registry'
 import './globals.css'
 import { lang } from '@/utils/langConfig'
-import { connectRedis } from '@/utils/redis'
+//import { connectRedis } from '@/utils/redis'
 import {QueryClient, QueryClientProvider} from 'react-query'
 
-export const appQueryClient = new QueryClient()
+// export const appQueryClient = new QueryClient()
 
 export default function RootLayout({children}: {children: React.ReactNode}) {
-  connectRedis()
+  //connectRedis()
 
 
   return (
@@ -16,11 +16,11 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
 
         <body>
 
-            <QueryClientProvider client={appQueryClient}>
+            {/* <QueryClientProvider client={appQueryClient}> */}
 
                 <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
 
-            </QueryClientProvider>
+            {/* </QueryClientProvider> */}
 
        </body>
 

@@ -21,3 +21,10 @@ docker run -it app-container sh
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+form
+crud
+api
+backend
+autenticação
+ci/cd
+hospedagem

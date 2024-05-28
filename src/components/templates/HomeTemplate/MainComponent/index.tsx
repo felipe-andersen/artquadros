@@ -4,7 +4,7 @@ import Div from "./styles"
 import Image from 'next/image'
 import { useEffect, useState } from "react"
 import Link from "next/link"
-import { Categories, Category } from "@/models/categories/types"
+import { CategoryList, Category } from "@/models/categories"
 import { fetchAPI } from "@/utils/fetchAPI/fetchAPI"
 
 import { usePathname } from "next/navigation"
@@ -15,6 +15,7 @@ import {
     QueryClient,
     QueryClientProvider,
   } from 'react-query'
+import LogInSignInModal from '@/components/organisms/LogInSignInModal'
 
 
 // import { GET_LOCATIONS } from "@/graphql/query/locations";
@@ -32,7 +33,7 @@ const categories = [
 interface ComponentProtocol {
     langConfig?: string;
     componentData?: {
-        categories: Categories
+        categories: CategoryList
         minBreakpoint: boolean
         products: any
         urls: {
@@ -135,7 +136,7 @@ async function MainComponent(props:ComponentProtocol) {
                 
                 */}
 
-                <section className="options section">
+                <section className="options section ">
 
                     <h2 >Quadros em diversos modelos a preços baixos \uF88A;</h2>
 
@@ -191,31 +192,36 @@ async function MainComponent(props:ComponentProtocol) {
                         )
                     }
 
-                    <div about="flexbox" className="flexbox dragscroll" id="flexbox" >
+
+                    <div about="flexbox" className="flexbox flex  w-full items-center overflow-y-hidden overflow-x-scroll g-3 p-0 m-0 box-border gap-3" id="flexbox" >
 
                         {
                             
                             products.products.map( i =>                
                             
-                                <div className="item" about="item" key={i.id}>
+                                <div className="item bg-red-200" about="item" key={i.id}>
 
                                     <a>
 
                                         <div about="galery">
 
-                                            <img src={i.thumbnail}/>
+                                            <img className="thumbnail" src={i.thumbnail}/>
 
                                         </div>
 
                                     </a>
 
-                                    <div >
+             
+                   
 
-                                        <span>{i.title}</span>
+                                    <div className='h-37.5 border-box overflow-hidden w-60 h-36 p-2 flex flex-column text-sm m-0' >
 
-                                        <span>{i.description}</span>
+                                        <span className='p-2'>{i.title}</span>
 
-                                        <span>A partir de <span title="BRL">{'R$'}</span>{ '58,00'}</span>
+                                        <span className='p-2'>{i.description}</span>
+
+                                        <span className='p-2 justify-start bg-blue-200 flex whitespace-nowrap '>A partir de R$ 58,00
+                                        </span>
 
                                     </div>
 
@@ -293,7 +299,7 @@ async function MainComponent(props:ComponentProtocol) {
                         )
                     }
 
-                    <div about="flexbox" className="flexbox dragscroll">
+                    <div about="flexbox" className="flexbox justify-start">
 
                         {
                             
@@ -469,7 +475,7 @@ async function MainComponent(props:ComponentProtocol) {
                         
                         <h2>Sobre a Quadrosframe</h2>
 
-                        <p className="p">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+                        <p className="p ">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
 
                         <Link href="." prefetch={false} replace={false}>ArtQuadros</Link>
 
